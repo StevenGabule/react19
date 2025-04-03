@@ -1,5 +1,4 @@
-import { useActionState } from 'react';
-
+import React, { useActionState } from 'react';
 
 async function submitMessage(prevState, formData) {
   try {
@@ -22,7 +21,7 @@ function MessageForm() {
 
   return (
     <form action={formAction}>
-      <textarea name="message" rows="4" /> <br />
+      <textarea name="message" rows={4} /> <br />
       <button type="submit">Send</button>
       {state?.error && <p style={{ color: 'red' }}>{state.error}</p>}
       {state?.success && <p style={{ color: 'green' }}>{state.success}</p>}
