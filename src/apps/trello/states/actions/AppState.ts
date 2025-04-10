@@ -13,8 +13,8 @@ interface List {
 }
 
 export interface TasksAppState {
-  draggedItem: DragItem | undefined;
-  lists: List[];
+  draggedItem: DragItem | undefined
+  lists: List[]
 }
 
 interface TaskSetDraggedItemAction {

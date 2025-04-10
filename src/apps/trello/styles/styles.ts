@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AppContainer = styled.div`
+export const TaskAppContainer = styled.div`
   align-items: flex-start;
   background-color: #3179ba;
   display: flex;
@@ -11,8 +11,8 @@ export const AppContainer = styled.div`
 `
 
 interface DragPreviewContainerProps {
-  isHidden?: boolean;
-  isPreview?: boolean;
+  isHidden?: boolean
+  isPreview?: boolean
 }
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`

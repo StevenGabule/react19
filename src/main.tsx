@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 // import App from './App'
 // import AppRepoFinder from './apps/repo-finder/AppRepoFinder';
 // import VoterApp from './apps/voters/VoterApp';
-import TimerTrackingApp from './apps/time-tracking/TimerTrackingApp';
+// import TimerTrackingApp from './apps/time-tracking/TimerTrackingApp';
+import TrelloApp from './apps/trello/TrelloApp';
 
 const rootElement = document.getElementById('root')!;
 createRoot(rootElement).render(
@@ -11,6 +12,7 @@ createRoot(rootElement).render(
     {/* <App /> */}
     {/* <AppRepoFinder /> */}
     {/* <VoterApp /> */}
-    <TimerTrackingApp />
+    {/* <TimerTrackingApp /> */}
+    <TrelloApp />
   </StrictMode>,
 )
