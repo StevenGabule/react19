@@ -1,11 +1,10 @@
-import React from "react";
-import { AppState, TaskAction } from "../actions/AppState";
+import { TasksAppState, TaskAction } from "../actions/AppState";
 import { TaskActionType } from '../action-types';
 import { nanoid } from 'nanoid';
 import { findItemIndexById } from '../../utils/findItemIndexById';
 import { moveItem } from '../../utils/moveItem';
 
-export const AppStateReducer = (state: AppState, action: TaskAction): AppState => {
+export const TasksAppStateReducer = (state: TasksAppState, action: TaskAction): TasksAppState => {
   switch (action.type) {
 		case TaskActionType.SET_DRAGGED_ITEM: {
 			return {...state, draggedItem: action.payload}

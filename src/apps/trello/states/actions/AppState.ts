@@ -12,7 +12,7 @@ interface List {
   tasks: Task[];
 }
 
-export interface AppState {
+export interface TasksAppState {
   draggedItem: DragItem | undefined;
   lists: List[];
 }
@@ -53,3 +53,8 @@ export type TaskAction =
   | TaskAddTaskAction
   | TaskMoveListAction
   | TaskMoveTaskAction;
+
+export interface TasksAppStateContextProps {
+  state: TasksAppState;
+  dispatch: React.Dispatch<TaskAction>;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppState as TaskAppState } from './states/actions/AppState';
-import { load } from './services/api';
+import { TasksAppState as TaskAppState } from './states/actions/AppState';
+import { tasksLoad } from './services/api';
 
-export const withData = (WrappedComponent: React.ComponentType<React.PropsWithChildren<{initialState: TaskAppState}>>) => {
+export const withTasksData = (WrappedComponent: React.ComponentType<React.PropsWithChildren<{initialState: TaskAppState}>>) => {
 	return ({children} : React.PropsWithChildren<{}>) => {
 		const [isLoading, setIsLoading] = React.useState(true)
 		const [error, setError] = React.useState<Error | undefined>()
@@ -11,7 +11,7 @@ export const withData = (WrappedComponent: React.ComponentType<React.PropsWithCh
 		React.useEffect(() => {
 			const fetchInitialState = async () => {
 				try {
-					const data = await load();
+					const data = await tasksLoad();
 					setInitialState(data);
 				} catch (err) {
 					if(err instanceof Error) {

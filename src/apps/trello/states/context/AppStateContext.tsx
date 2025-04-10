@@ -1,23 +1,27 @@
-import React, { useEffect, useReducer } from 'react';
-import { AppState, TasksAppStateContextProps } from '../actions/AppState';
-import { withData as withTaskData } from '../../withData';
-import { AppStateReducer } from '../reducers/taskReducer';
-import { save } from '../../services/api';
+import React from 'react';
+import { TasksAppState, TasksAppStateContextProps } from '../actions/AppState';
+import { withTasksData } from '../../withData';
+import { TasksAppStateReducer } from '../reducers/taskReducer';
+import { taskSave } from '../../services/api';
 
-const AppStateContext = React.createContext<TasksAppStateContextProps>(
+const TaskAppStateContext = React.createContext<TasksAppStateContextProps>(
   {} as TasksAppStateContextProps
 );
 
-export const AppStateProvider = withTaskData(({children, initialState}: React.PropsWithChildren<{initialState: AppState}>) => {
-	const [state, dispatch] = useReducer(AppStateReducer, initialState)
+export const TaskAppStateProvider = withTasksData(({children, initialState}: React.PropsWithChildren<{initialState: TasksAppState}>) => {
+	const [state, dispatch] = React.useReducer(TasksAppStateReducer, initialState)
 
-	useEffect(() => {
-		save(state);
+	React.useEffect(() => {
+		taskSave(state);
 	}, [state])
 
 	return (
-		<AppStateContext.Provider value={{state, dispatch}}>
+		<TaskAppStateContext.Provider value={{state, dispatch}}>
 			{children}
-		</AppStateContext.Provider>
+		</TaskAppStateContext.Provider>
 	)
 })
+
+export const useTasksAppState = () => {
+	return React.useContext(TaskAppStateContext);
+}

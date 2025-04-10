@@ -1,6 +1,6 @@
-import { AppState } from "../states/actions/AppState";
+import { TasksAppState } from "../states/actions/AppState";
 
-export const save = (payload: AppState) => {
+export const taskSave = (payload: TasksAppState) => {
 	return fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}/save`, {
 		method: 'POST',
 		headers: {
@@ -13,7 +13,7 @@ export const save = (payload: AppState) => {
 	.catch(console.error)
 };
 
-export const load = (): Promise<AppState> => {
+export const tasksLoad = (): Promise<TasksAppState> => {
   return fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}/load`)
 	.then((response) => response.json())
 	.catch(console.error)
