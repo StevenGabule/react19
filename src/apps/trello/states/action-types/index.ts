@@ -1,0 +1,7 @@
+export enum TaskActionType {
+	SET_DRAGGED_ITEM = "SET_DRAGGED_ITEM",
+	ADD_LIST = "ADD_LIST",
+	ADD_TASK = "ADD_TASK",
+	MOVE_LIST = "MOVE_LIST",
+	MOVE_TASK = "MOVE_TASK",
+} 
