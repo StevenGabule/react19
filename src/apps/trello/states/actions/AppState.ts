@@ -1,4 +1,3 @@
-import { TaskActionType } from "../action-types";
 import { DragItem } from "./DragItem";
 
 interface Task {
@@ -18,27 +17,27 @@ export interface TasksAppState {
 }
 
 interface TaskSetDraggedItemAction {
-  type: TaskActionType.SET_DRAGGED_ITEM;
+  type: "SET_DRAGGED_ITEM";
   payload: DragItem | undefined;
 }
 
 interface TaskAddListAction {
-  type: TaskActionType.ADD_LIST;
+  type: "ADD_LIST";
   payload: string;
 }
 
 interface TaskAddTaskAction {
-  type: TaskActionType.ADD_TASK;
+  type: "ADD_TASK";
   payload: { text: string; listId: string };
 }
 
 interface TaskMoveListAction {
-  type: TaskActionType.MOVE_LIST;
+  type: "MOVE_LIST";
   payload: { dragIndex: number; hoverIndex: number };
 }
 
 interface TaskMoveTaskAction {
-  type: TaskActionType.MOVE_TASK;
+  type: "MOVE_TASK";
   payload: {
     dragIndex: number;
     hoverIndex: number;

@@ -1,15 +1,14 @@
 import { TasksAppState, TaskAction } from "../actions/AppState";
-import { TaskActionType } from '../action-types';
 import { nanoid } from 'nanoid';
 import { findItemIndexById } from '../../utils/findItemIndexById';
 import { moveItem } from '../../utils/moveItem';
 
 export const TasksAppStateReducer = (state: TasksAppState, action: TaskAction): TasksAppState => {
   switch (action.type) {
-		case TaskActionType.SET_DRAGGED_ITEM: {
+		case "SET_DRAGGED_ITEM": {
 			return {...state, draggedItem: action.payload}
 		}
-		case TaskActionType.ADD_LIST: {
+		case "ADD_LIST": {
       return {
         ...state,
         lists: [
@@ -18,7 +17,7 @@ export const TasksAppStateReducer = (state: TasksAppState, action: TaskAction): 
         ]
       }
     }
-    case TaskActionType.ADD_TASK: {
+    case "ADD_TASK": {
       const targetLaneIndex = findItemIndexById(
         state.lists,
         action.payload.listId
@@ -29,12 +28,12 @@ export const TasksAppStateReducer = (state: TasksAppState, action: TaskAction): 
       })
       return {...state};
     }
-    case TaskActionType.MOVE_LIST: {
+    case "MOVE_LIST": {
       const {dragIndex, hoverIndex} = action.payload;
       state.lists = moveItem(state.lists, dragIndex, hoverIndex)
       return {...state};
     }
-    case TaskActionType.MOVE_TASK: {
+    case "MOVE_TASK": {
       const {dragIndex, hoverIndex, sourceColumn, targetColumn} = action.payload;
       const sourceLaneIndex = findItemIndexById(state.lists, sourceColumn);
       const targetLaneIndex = findItemIndexById(state.lists, targetColumn);

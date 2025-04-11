@@ -26,9 +26,11 @@ export const Column = ({ id, index, text, isPreview }: ColumnProps) => {
 				const dragIndex = item.index;
 				const hoverIndex = index;
 
-				if (dragIndex === hoverIndex) return;
+				if (dragIndex === hoverIndex) {
+					return;
+				}
 
-				dispatch({ type: TaskActionType.MOVE_LIST, payload: { dragIndex, hoverIndex } });
+				dispatch({ type: 'MOVE_LIST', payload: { dragIndex, hoverIndex } });
 				item.index = hoverIndex;
 			} else {
 				const dragIndex = item.index;
@@ -39,7 +41,8 @@ export const Column = ({ id, index, text, isPreview }: ColumnProps) => {
 				if (sourceColumn === targetColumn) return;
 
 				dispatch({
-					type: TaskActionType.MOVE_TASK, payload: {
+					type: "MOVE_TASK", 
+					payload: {
 						dragIndex, hoverIndex, sourceColumn, targetColumn
 					}
 				})
