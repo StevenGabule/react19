@@ -5,7 +5,8 @@ import { createRoot } from 'react-dom/client';
 // import VoterApp from './apps/voters/VoterApp';
 // import TimerTrackingApp from './apps/time-tracking/TimerTrackingApp';
 // import TrelloApp from './apps/trello/TrelloApp';
-import { EcomApp } from './apps/ecommerce/EcomApp';
+// import { EcomApp } from './apps/ecommerce/EcomApp';
+import { PianoApp } from './apps/piano/PianoApp';
 
 const rootElement = document.getElementById('root')!;
 createRoot(rootElement).render(
@@ -15,6 +16,7 @@ createRoot(rootElement).render(
     {/* <VoterApp /> */}
     {/* <TimerTrackingApp /> */}
     {/* <TrelloApp /> */}
-    <EcomApp />
+    {/* <EcomApp /> */}
+    <PianoApp />
   </StrictMode>,
 )
