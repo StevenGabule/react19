@@ -17,6 +17,7 @@
     "@types/uuid": "^10.0.0",
     "axios": "^1.8.4",
     "body-parser": "^2.2.0",
+    "clsx": "^2.1.1",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
     "nanoid": "^5.1.5",
