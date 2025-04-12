@@ -2,6 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { useInstrument } from '../../state/instrument';
 import { InstrumentName } from 'soundfont-player';
 import { options } from './options';
+import './style.css';
 
 export const InstrumentSelector: React.FC = () => {
 	const {instrument, setInstrument} = useInstrument()
