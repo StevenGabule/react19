@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setStrokeColor } from '../currentStroke/slice';
+import { setStrokeColor } from '../modules/current-stroke/slice';
 
 const COLORS = [
 	"#000000",

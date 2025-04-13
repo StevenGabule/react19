@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { strokesLengthSelector } from '../modules/strokes/selectors';
-import { redo, undo } from '../modules/historyIndex/slice';
+import { redo, undo } from '../modules/history-index/slice';
 
 export const EditPanel = () => {
 	const dispatch = useDispatch();

@@ -21,6 +21,10 @@ export type RootState = {
 	strokes: Stroke[];
 	historyIndex: number;
 	modalVisible: ModalState;
-	projects: Project[];
+	projectsList: {
+		error: string;
+		pending: boolean;
+		projects: Project[]
+	};
 }
 

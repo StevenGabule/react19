@@ -1,8 +1,8 @@
-import { Point } from "./../utils/types.d";
-import { PayloadAction } from "./../../../../node_modules/@reduxjs/toolkit/src/createAction";
+import { Point } from "../../utils/types";
+import { PayloadAction } from "@reduxjs/toolkit/src/createAction";
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../utils/types";
-import { endStroke } from "../modules/shared-actions";
+import { RootState } from "../../utils/types";
+import { endStroke } from "../shared-actions";
 
 const initialState: RootState["currentStroke"] = { color: "#000", points: [] };
 
